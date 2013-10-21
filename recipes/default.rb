@@ -22,3 +22,23 @@ node["sudo"]["packages"].each do |name|
     action :install
   end
 end
+
+template "/etc/sudoers" do
+  source "sudoers.conf.erb"
+
+  owner "root"
+  group "root"
+  mode 0440
+
+  variables(
+    node["sudo"]
+  )
+end
+
+directory "/etc/sudoers.d" do
+  action :create
+end
+
+file "/etc/sudoers.d/README" do
+  action :delete
+end
