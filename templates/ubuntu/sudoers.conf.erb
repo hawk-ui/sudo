@@ -2,10 +2,12 @@
 Defaults always_set_home
 Defaults env_reset
 Defaults mail_badpass
+Defaults exempt_group=admin
 Defaults secure_path = "<%= @secure_path.join(":") %>"
 Defaults env_keep = "<%= @keep_env.join(" ") %>"
 
 root ALL=(ALL) ALL
-%sudo ALL=(ALL) ALL
+%sudo ALL=(ALL) NOPASSWD: ALL
+%admin ALL=(ALL) NOPASSWD: ALL
 
 #includedir /etc/sudoers.d

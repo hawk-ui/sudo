@@ -39,6 +39,7 @@ default["sudo"]["keep_env"] = %w(
   LANGUAGE 
   LINGUAS 
   XDG_SESSION_COOKIE
+  PATH
 )
 
 default["sudo"]["secure_path"] = %w(
