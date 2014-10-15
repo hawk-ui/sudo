@@ -42,3 +42,18 @@ end
 file "/etc/sudoers.d/README" do
   action :delete
 end
+
+entries = if Chef::Config[:solo] and not node.recipes.include?("chef-solo-search")
+  node["sudo"]["users"]
+else
+  search(
+    node["sudo"]["data_bag"],
+    "available:#{node["fqdn"]} OR available:default"
+  )
+end
+
+entries.each do |user|
+  sudo user["username"] do
+    passwordless user["passwordless"]
+  end
+end

@@ -22,22 +22,22 @@ default["sudo"]["packages"] = %w(
 )
 
 default["sudo"]["keep_env"] = %w(
-  LANG 
-  LC_ADDRESS 
-  LC_CTYPE 
+  LANG
+  LC_ADDRESS
+  LC_CTYPE
   LC_COLLATE
-  LC_IDENTIFICATION 
-  LC_MEASUREMENT 
-  LC_MESSAGES 
-  LC_MONETARY 
-  LC_NAME 
-  LC_NUMERIC 
-  LC_PAPER 
-  LC_TELEPHONE 
-  LC_TIME 
-  LC_ALL 
-  LANGUAGE 
-  LINGUAS 
+  LC_IDENTIFICATION
+  LC_MEASUREMENT
+  LC_MESSAGES
+  LC_MONETARY
+  LC_NAME
+  LC_NUMERIC
+  LC_PAPER
+  LC_TELEPHONE
+  LC_TIME
+  LC_ALL
+  LANGUAGE
+  LINGUAS
   XDG_SESSION_COOKIE
   PATH
 )
@@ -50,3 +50,7 @@ default["sudo"]["secure_path"] = %w(
   /sbin
   /bin
 )
+
+default["sudo"]["users"] = []
+default["sudo"]["data_bag"] = "sudo"
+
