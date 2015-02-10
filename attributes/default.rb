@@ -53,4 +53,3 @@ default["sudo"]["secure_path"] = %w(
 
 default["sudo"]["users"] = []
 default["sudo"]["data_bag"] = "sudo"
-
