@@ -43,7 +43,7 @@ file "/etc/sudoers.d/README" do
   action :delete
 end
 
-entries = if Chef::Config[:solo] and not node.recipes.include?("chef-solo-search")
+entries = if Chef::Config[:solo] and not (node.recipes.include?("chef-solo-search") || node.recipes.include?("chef-solo-search::default"))
   node["sudo"]["users"]
 else
   search(
